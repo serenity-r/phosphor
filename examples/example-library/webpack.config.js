@@ -4,7 +4,7 @@ module.exports = {
   entry: './build/index.js',
   output: {
     path: __dirname + '/build/',
-    filename: 'bundle.example.js',
+    filename: 'phosphor.js',
     publicPath: './build/',
     library: 'phosphorjs', //add this line to enable re-use
     libraryTarget: 'umd',
