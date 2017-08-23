@@ -1,8 +1,6 @@
 Phosphor
 ========
 
-[![Build Status](https://travis-ci.org/phosphorjs/phosphor.svg)](https://travis-ci.org/phosphorjs/phosphor?branch=master)
-
 The [PhosphorJS](http://phosphorjs.github.io/) libary.
 
 ## Client-Side Library
@@ -46,3 +44,11 @@ $(document).ready(function(){
   	window.onresize = () => { main.update(); };
 });
 ```
+
+### Workflow
+
+If you want to make changes to the `phosphor.js` library, rather than rebuild everything, do the following:
+
+ * Make changes to `src/index.ts`
+ * Change to `example-library` directory
+ * Type `tsc && webpack`
