@@ -21,7 +21,7 @@ export {
 } from '@phosphor/messaging';
 
 export {
-  BoxPanel, CommandPalette, ContextMenu, DockPanel, Menu, MenuBar, Widget
+  BoxPanel, DockPanel, Widget
 } from '@phosphor/widgets';
 
 export class ContentWidget extends Widget {
