@@ -1075,15 +1075,16 @@ namespace Private {
       let newVNode = newContent[i];
 
       // If both elements are identical, there is nothing to do.
+      // FIX: https://github.com/Microsoft/TypeScript/issues/28551
       if (oldVNode === newVNode) {
-        currElem = currElem!.nextSibling;
+        currElem = currElem!.nextSibling as ChildNode;
         continue;
       }
 
       // Handle the simplest case of in-place text update first.
       if (oldVNode.type === 'text' && newVNode.type === 'text') {
         currElem!.textContent = newVNode.content;
-        currElem = currElem!.nextSibling;
+        currElem = currElem!.nextSibling as ChildNode;
         continue;
       }
 
@@ -1114,7 +1115,7 @@ namespace Private {
 
       // If both elements are identical, there is nothing to do.
       if (oldVNode === newVNode) {
-        currElem = currElem!.nextSibling;
+        currElem = currElem!.nextSibling as ChildNode;
         continue;
       }
 
@@ -1144,7 +1145,7 @@ namespace Private {
       updateContent(currElem as HTMLElement, oldVNode.children, newVNode.children);
 
       // Step to the next sibling element.
-      currElem = currElem!.nextSibling;
+      currElem = currElem!.nextSibling as ChildNode;
     }
 
     // Dispose of the old nodes pushed to the end of the host.
@@ -1337,7 +1338,7 @@ namespace Private {
       if (vNode.type === 'element' && vNode.attrs.key) {
         keyMap[vNode.attrs.key] = { vNode, element: node as HTMLElement };
       }
-      node = node!.nextSibling;
+      node = node!.nextSibling as ChildNode;
     }
     return keyMap;
   }

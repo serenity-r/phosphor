@@ -601,6 +601,9 @@ namespace Private {
    */
   const dirtySet = new Set<IConnection[]>();
 
+  // https://github.com/microsoft/tslint-microsoft-contrib/pull/503/files
+  declare const setImmediate: (...args: any[]) => number;
+  
   /**
    * A function to schedule an event loop callback.
    */

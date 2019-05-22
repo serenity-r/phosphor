@@ -1307,7 +1307,7 @@ namespace Private {
       return dfault;
     }
     if (typeof value === 'function') {
-      return value;
+      return value as CommandFunc<T>;
     }
     return () => value;
   }

@@ -487,6 +487,10 @@ namespace MessageLoop {
    */
   let flushGuard = false;
 
+  // https://github.com/microsoft/tslint-microsoft-contrib/pull/503/files
+  declare const setImmediate: (...args: any[]) => number;
+  declare const clearImmediate: (...args: any[]) => number;
+  
   /**
    * A function to schedule an event loop callback.
    */
