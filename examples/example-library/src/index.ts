@@ -13,6 +13,10 @@ import {
 } from '@phosphor/widgets';
 
 export {
+  find
+} from '@phosphor/algorithm';
+
+export {
   CommandRegistry
 } from '@phosphor/commands';
 

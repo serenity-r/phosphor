@@ -13,6 +13,10 @@ import {
 } from '@phosphor/widgets';
 
 export {
+  find
+} from '@phosphor/algorithm';
+
+export {
   CommandRegistry
 } from '@phosphor/commands';
 
@@ -69,7 +73,6 @@ function main(): void {
   
   // Set layout
   var layout = dock.saveLayout();
-  console.log(layout);
   
   var panels: DockLayout.AreaConfig[] = (layout.main as DockLayout.ISplitAreaConfig).children;
   var sizes: number[] = (panels[0] as DockLayout.ISplitAreaConfig).sizes;
@@ -82,6 +85,8 @@ function main(): void {
   
   dock.restoreLayout(layout);
 
+  // phosphorjs.find(dock.children(), (w) => {return w.id === "steve"})
+  
   // Attach BoxPanel to document.body (could be any element)
   Widget.attach(dock, document.body);
 
