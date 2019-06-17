@@ -1,13 +1,12 @@
 {
   "private": true,
-  "name": "@phosphor/example-library",
+  "name": "@phosphor/example-boxpanel",
   "version": "0.1.13",
   "dependencies": {
     "@phosphor/commands": "^1.4.0",
     "@phosphor/dragdrop": "^1.3.0",
     "@phosphor/messaging": "^1.2.2",
     "@phosphor/widgets": "^1.5.0",
-    "@phosphor/algorithm": "^1.1.2",
     "commands": "0.0.7",
     "messaging": "0.0.2",
     "widgets": "^0.3.4"

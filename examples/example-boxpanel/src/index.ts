@@ -9,12 +9,8 @@
 import '../style/index.css';
 
 import {
-  Widget
+  BoxPanel, Widget
 } from '@phosphor/widgets';
-
-export {
-  find
-} from '@phosphor/algorithm';
 
 export {
   CommandRegistry
@@ -47,3 +43,32 @@ export class ContentWidget extends Widget {
     this.title.caption = `Long description for: ${name}`;
   }
 }
+
+function main(): void {
+  var hsplit = new BoxPanel({direction: 'left-to-right'});
+  hsplit.id = 'hsplit';
+  
+  var vsplit = new BoxPanel({direction: 'top-to-bottom'});
+  vsplit.id = 'vsplit';
+
+  // Create ContentWidget (right now, uses predefined function)
+  var r1 = new ContentWidget('Red');
+  var b1 = new ContentWidget('Blue');
+  var g1 = new ContentWidget('Green');
+
+  // Add widgets in appropriate places - this can be done in any order
+  vsplit.addWidget(b1);
+  vsplit.addWidget(g1);
+  BoxPanel.setStretch(b1, 1);
+  BoxPanel.setStretch(g1, 3);
+  hsplit.addWidget(r1);
+  hsplit.addWidget(vsplit);
+  
+  // Attach BoxPanel to document.body (could be any element)
+  Widget.attach(hsplit, document.body);
+
+  // Make sure resizing is taken care of
+  window.onresize = () => { hsplit.update(); };
+}
+
+window.onload = main;
